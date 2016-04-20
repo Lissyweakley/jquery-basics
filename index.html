@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQUERY BEGINNER</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<style>
+
+	.col-md-4{
+		background-color: white;
+		border: 2px solid #cbcdcd;
+		text-align: center;
+		padding: 105px;
+		height: 250px;
+		font-size: 40px;
+		color: black;
+	}
+
+	.kaboom{
+		background:url(giphy.gif);
+	}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+	<div class="row-special">
+			<div id="aBox"class="col-md-4">
+				<p>A</p>
+			</div>
+			<div id="bBox"class="col-md-4">
+				<p>B</p>
+			</div>
+			<div class="col-md-4">
+				<p>C</p>
+			</div>
+	</div>
+
+		
+	<div class="row">
+				<div class="col-md-4">
+					<p>D</p>
+				</div>
+				<div id="eBox"class="col-md-4" class="kaboom">
+					<p>E</p>
+				</div>
+				<div class="col-md-4">
+					<p>F</p>
+				</div>
+	</div>
+
+
+	<div class="row">
+				<div id="gBox" class="col-md-4" class="special">
+					<p>G</p>
+				</div>
+				<div class="col-md-4">
+					<p>H</p>
+				</div>
+				<div class="col-md-4">
+					<p>I</p>
+				</div>
+	</div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script>
+	// var myName = 'Melisa';
+	// alert('BOO!');
+	// console.log(myName);
+	// function(){
+	// 	// Instructions go here
+	// }
+	$(document). ready(function(){
+
+		// 	$("#aBox").hide(3000, function(){
+		// 		alert('Hide is Complete!');
+		// });
+
+			$("#bBox").click(function(){
+				$("#bBox").fadeOut(2000);
+			});
+
+			$("#eBox").hover(
+				// for the hover on event
+					function(){
+						$(this).addClass("kaboom")
+						console.log("a");
+					}, 
+
+				// for the hover off event
+				function(){
+					$(this).removeClass("kaboom")
+					console.log("b");
+				});
+
+			$( window ).scroll(function() {
+			  $( "gBox" ).addClass( "special" ).fadeOut( "slow" );
+			});
+	});
+
+</script>
+</body>
+</html>
+
